@@ -10,16 +10,19 @@ public class Main {
                     1. Сравнить
                     2. Округлить
                     3. Отбросить дробную часть
+                    Или напишите "end" для выхода
                     """);
+            if (scanner.nextLine().equals("end")) {
+                break;
+            }
             int menu = scanner.nextInt();
             try {
                 menu(scanner, menu);
             } catch (InputMismatchException ex) {
                 System.out.println("Между цифрами нужно писать |,| а не |.|");
             }
-        } while (!scanner.nextLine().equals("end"));
+        } while (scanner.nextLine().equals("end"));
     }
-
     private static void menu(Scanner scanner, int menu) {
         switch (menu) {
             case 1 -> {
